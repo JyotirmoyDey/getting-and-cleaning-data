@@ -57,3 +57,4 @@ colnames(complete_data) =c(columns[[2]],"subject","activity")
 #    the average of each variable for each activity and each subject.
 second_data = complete_data %>% group_by(activity,subject) %>% summarize_all(funs(mean))
 
+write.table(second_data, file = "tidydata.txt", row.name = FALSE)
